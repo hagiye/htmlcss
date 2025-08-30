@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demonstration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Understanding the CSS Box Model</h1>
+        <p>A practical demonstration of spacing, sizing, and layout</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#components">Box Components</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#practice">Practice</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="intro">
+            <h2>What is the Box Model?</h2>
+            <div class="content-box">
+                <p>Every element in web design is a rectangular box. The CSS box model describes how these boxes are sized and positioned.</p>
+                <p>The model consists of: content, padding, border, and margin.</p>
+            </div>
+        </section>
+        
+        <section id="components">
+            <h2>Box Model Components</h2>
+            <div class="component-grid">
+                <div class="component">
+                    <h3>Content</h3>
+                    <p>The actual content of the box, where text and images appear.</p>
+                </div>
+                <div class="component">
+                    <h3>Padding</h3>
+                    <p>Clears an area around the content. The space inside the box.</p>
+                </div>
+                <div class="component">
+                    <h3>Border</h3>
+                    <p>A border that goes around the padding and content.</p>
+                </div>
+                <div class="component">
+                    <h3>Margin</h3>
+                    <p>Clears an area outside the border. The space between boxes.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="examples">
+            <h2>Box Model Examples</h2>
+            <div class="example-container">
+                <div class="example-box default-box">
+                    <h3>Default Box</h3>
+                    <p>This box shows default browser styling with content, padding, border, and margin.</p>
+                </div>
+                
+                <div class="example-box padding-example">
+                    <h3>Padding Example</h3>
+                    <p>This box has increased padding to demonstrate inner spacing.</p>
+                </div>
+                
+                <div class="example-box margin-example">
+                    <h3>Margin Example</h3>
+                    <p>This box has increased margin to demonstrate outer spacing.</p>
+                </div>
+                
+                <div class="example-box border-example">
+                    <h3>Border Example</h3>
+                    <p>This box has a styled border to demonstrate border properties.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="practice">
+            <h2>Practice the Box Model</h2>
+            <div class="interactive-box">
+                <div class="box-controls">
+                    <h3>Adjust the Box Model</h3>
+                    <label for="padding-control">Padding: 20px</label>
+                    <input type="range" id="padding-control" min="0" max="50" value="20">
+                    
+                    <label for="margin-control">Margin: 20px</label>
+                    <input type="range" id="margin-control" min="0" max="50" value="20">
+                    
+                    <label for="border-control">Border: 3px</label>
+                    <input type="range" id="border-control" min="0" max="20" value="3">
+                </div>
+                <div class="visual-box">
+                    <div class="box-content">
+                        <p>Content Area</p>
+                        <p>Adjust the sliders to see how padding, margin, and border affect this element.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>CSS Box Model Demonstration &copy; 2023</p>
+        <p>Created to showcase proper HTML structure and CSS styling techniques.</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript to make the interactive box work
+        document.addEventListener('DOMContentLoaded', function() {
+            const paddingControl = document.getElementById('padding-control');
+            const marginControl = document.getElementById('margin-control');
+            const borderControl = document.getElementById('border-control');
+            const visualBox = document.querySelector('.visual-box');
+            
+            paddingControl.addEventListener('input', function() {
+                visualBox.style.padding = this.value + 'px';
+                document.querySelector('label[for="padding-control"]').textContent = 'Padding: ' + this.value + 'px';
+            });
+            
+            marginControl.addEventListener('input', function() {
+                visualBox.style.margin = this.value + 'px';
+                document.querySelector('label[for="margin-control"]').textContent = 'Margin: ' + this.value + 'px';
+            });
+            
+            borderControl.addEventListener('input', function() {
+                visualBox.style.borderWidth = this.value + 'px';
+                document.querySelector('label[for="border-control"]').textContent = 'Border: ' + this.value + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
